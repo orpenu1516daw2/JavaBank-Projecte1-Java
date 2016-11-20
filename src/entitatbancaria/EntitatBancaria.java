@@ -435,7 +435,7 @@ public class EntitatBancaria {
 
         do{
             System.out.println("Benvingut a JavaBank, " + user);
-            System.out.println("\nQuè vols fer?\n\t1-Ingressar diners\n\t2-Retirar diners\n\t3-Transferir diners\n\t4-Obtenir prestec\n\t5-Consultar compte\n\t6-Crear tarjeta" +
+            System.out.println("\nQuè vols fer?\n\t1-Ingressar diners\n\t2-Retirar diners\n\t3-Transferir diners\n\t4-Obtenir préstec\n\t5-Consultar compte\n\t6-Crear targeta" +
                     "\n\t7-Crear nou compte\n\t8-Canviar de compte\n\t0-Tornar al login");
             int sw = lone.nextInt();
 
@@ -457,7 +457,7 @@ public class EntitatBancaria {
                 case 4:
                     double m = client.get(IDu).getPrestec();
                     compte.get(IDc).IngressarDiners(m);
-                    System.out.println("Prestec obtingut de " + m + "\nDiners al compte: " + compte.get(IDc).getDiners());
+                    System.out.println("Préstec obtingut de " + m + "\nDiners al compte: " + compte.get(IDc).getDiners());
                     break;
                 case 5:
                     System.out.println("Informació del compte:\n\tNom propietari: " + user + "\n\tDNI/CIF: " + codi + "\n\tNúmero de compte: " + compte.get(IDc).getN_compte() 

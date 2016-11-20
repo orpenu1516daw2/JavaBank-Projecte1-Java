@@ -383,23 +383,6 @@ public class EntitatBancaria {
                     transferencia(compte,client,user,codi,IDc);
                     break;
                 case 4:
-                    /*double m = 0;
-                    int swt;
-                    int dies = 0;
-                    
-                    System.out.println("Introdueix els messos a pagar:\n\t1-1 any\n\t2-2 anys\n\t3-3anys");
-                    swt = line.nextInt();
-                    
-                    switch(swt){
-                        case 1:
-                            dies = 365;
-                            m = client.get(IDu).getPrestec();
-                            compte.get(IDc).IngressarDiners(m);
-                            break;
-                            
-                            
-                    }*/
-                    
                     double m = client.get(IDu).getPrestec();
                     compte.get(IDc).IngressarDiners(m);
                     System.out.println("Prestec obtingut de " + m + "\nDiners al compte: " + compte.get(IDc).getDiners());
@@ -470,13 +453,3 @@ public class EntitatBancaria {
     }
 
 }
-/*char [] cod = codi.toCharArray();
-List<Character> codi = new ArrayList<>();
-if(cod[8] == 'T' || cod[8] == 'R' || cod[8] == 'W' || cod[8] == 'A' || cod[8] == 'G' || cod[8] == 'M' || cod[8] == 'Y' || cod[8] == 'F' || cod[8] == 'P'
-         || cod[8] == 'D' || cod[8] == 'X' || cod[8] == 'B' || cod[8] == 'N' || cod[8] == 'J' || cod[8] == 'Z' || cod[8] == 'S' || cod[8] == 'Q' || cod[8] == 'V'
-         || cod[8] == 'H' || cod[8] == 'L' || cod[8] == 'C' || cod[8] == 'L' || cod[8] == 'C' || cod[8] == 'K' || cod[8] == 'E'){
-    System.out.println("Molt be");
-} else {
-    System.out.println("Malament");
-    //T	R W A G	M Y F P	D X B N J Z S Q	V H L C	K E
-}*/

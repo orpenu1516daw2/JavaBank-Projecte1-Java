@@ -28,7 +28,7 @@ public class T_credit extends Compte {
     }
         
     /**
-     * Per obtenir el número de tarjeta
+     * Per obtenir el número de targeta
      * @return retorna el número de targeta
      */
     public long getN_tarjeta() {
@@ -36,7 +36,7 @@ public class T_credit extends Compte {
     }
 
     /**
-     * Per setejar el número de tarjeta
+     * Per setejar el número de targeta
      * @param n_tarjeta paràmetre que contè el número de targeta
      */
     public void setN_tarjeta(long n_tarjeta) {

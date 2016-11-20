@@ -31,7 +31,7 @@ public class T_debit extends Compte {
     } 
  
    /**
-     * Per obtenir el número de tarjeta
+     * Per obtenir el número de targeta
      * @return retorna el número de targeta
      */
     public long getN_tarjeta() {
@@ -64,7 +64,7 @@ public class T_debit extends Compte {
 
     /**
      * Per obtenir el saldo de la targeta
-     * @return retorna el saldo de la tarjeta
+     * @return retorna el saldo de la targeta
      */
     public double getSaldo() {
         return saldo;

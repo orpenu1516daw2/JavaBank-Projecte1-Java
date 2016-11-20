@@ -11,6 +11,10 @@ package entitatbancaria;
  */
 public interface Prestec {
     
+    /**
+     * Interfície per obtenir prestecs per els clients
+     * @return retornarà la quantitat que atorga el banc al client que sol·licita un prèstec
+     */
     public double getPrestec();
         
 }

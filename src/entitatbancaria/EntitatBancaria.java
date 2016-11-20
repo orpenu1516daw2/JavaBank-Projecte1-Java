@@ -461,7 +461,7 @@ public class EntitatBancaria {
                     break;
                 case 5:
                     System.out.println("Informació del compte:\n\tNom propietari: " + user + "\n\tDNI/CIF: " + codi + "\n\tNúmero de compte: " + compte.get(IDc).getN_compte() 
-                            + "\n\tSaldo: " + compte.get(IDc).getDiners() + "\n\tNúmero de comptes: " + client.get(IDu).getN_comptes());
+                            + "\n\tDomicili: " + client.get(IDu).getDomicili() + "\n\tSaldo: " + compte.get(IDc).getDiners() + "\n\tNúmero de comptes: " + client.get(IDu).getN_comptes());
 
                     Boolean exit = line.hasNextLine();
                     

@@ -15,24 +15,39 @@ public class Empresa extends Client implements Prestec {
     private String CIF;
     public String nom_empresa;
 
+    /**
+     * Constructor d'Empresa
+     * @param nom_empresa paràmetre que contè el nom de la empresa
+     * @param CIF paràmetre que contè el CIF de la empresa
+     * @param domicili paràmetre que contè el domicili de la empresa
+     * @param compte paràmetre de tipus ArrayList que contè tots els comtes
+     */
     public Empresa(String nom_empresa, String CIF, String domicili, ArrayList <Compte> compte) {
         super(domicili, compte);
         this.CIF = CIF;
         this.nom_empresa = nom_empresa;
     }
 
-    
+    /**
+     * Per obtenir el CIF del client empresa
+     * @return retorna el CIF de l'empresa
+     */
     public String getCIF() {
         return CIF;
     }
 
+    /**
+     * Per setejar el CIF del client empresa
+     * @param CIF paràmetre que contè el CIF de la empresa
+     */
     public void setCIF(String CIF) {
         this.CIF = CIF;
     }
 
-    public void setNom_empresa(String nom_empresa) {
-        this.nom_empresa = nom_empresa;
-    }
+    /**
+     * Per setejar el nom del client empresa
+     * @param nom_empresa paràmetre que contè el nom de la empresa
+     */
     public void setNom(String nom_empresa) {
         this.nom_empresa = nom_empresa;
     }
@@ -49,9 +64,13 @@ public class Empresa extends Client implements Prestec {
 
     @Override
     String getDNI() {
-        return CIF;
+        return "";
     }
 
+    /**
+     * Per obtenir prèstecs per l'usuari
+     * @return retorna la quantitat que atorga el banc al client.
+     */
     @Override
     public double getPrestec() {
         return 160000;

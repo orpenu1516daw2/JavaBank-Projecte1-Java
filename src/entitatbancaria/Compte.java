@@ -5,6 +5,8 @@
  */
 package entitatbancaria;
 
+import java.util.Objects;
+
 /**
  *
  * @author oriol
@@ -128,5 +130,39 @@ public class Compte {
         
         return diners;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.n_compte);
+        hash = 37 * hash + Objects.hashCode(this.dni_cif);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.diners) ^ (Double.doubleToLongBits(this.diners) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Compte other = (Compte) obj;
+        if (!Objects.equals(this.n_compte, other.n_compte)) {
+            return false;
+        }
+        if (!Objects.equals(this.dni_cif, other.dni_cif)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Compte{" + "n_compte=" + n_compte + ", dni_cif=" + dni_cif + ", diners=" + diners + '}';
+    }
+    
+    
     
 }

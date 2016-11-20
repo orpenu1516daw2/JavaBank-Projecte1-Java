@@ -368,10 +368,11 @@ public class EntitatBancaria {
             if(comp.get(i).equalsIgnoreCase(ing)){
                 IDc = indx.get(i);
                 logged(user,codi,compte,client,IDc,IDu);
-            }else{
+            }/*else{
                 System.out.println("\nIntrodueix un valor vàlid\n\n");
-            }
+            }*/
         }
+        System.out.println("\nIntrodueix un valor vàlid\n\n");
         swCount(compte,client,user,codi,IDu);
     }
     

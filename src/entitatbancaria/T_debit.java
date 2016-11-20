@@ -77,5 +77,37 @@ public class T_debit extends Compte {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 17 * hash + (int) (this.n_tarjeta ^ (this.n_tarjeta >>> 32));
+        hash = 17 * hash + this.pin;
+        hash = 17 * hash + (int) (Double.doubleToLongBits(this.saldo) ^ (Double.doubleToLongBits(this.saldo) >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final T_debit other = (T_debit) obj;
+        if (this.n_tarjeta != other.n_tarjeta) {
+            return false;
+        }
+        if (this.pin != other.pin) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "T_debit{" + "n_tarjeta=" + n_tarjeta + ", pin=" + pin + ", saldo=" + saldo + '}';
+    }
  
 }

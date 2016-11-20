@@ -36,6 +36,7 @@ public class Particular extends Client implements Prestec {
      * Per obtenir el nom del client particular
      * @return retorna el nom del client particular
      */
+    @Override
     public String getNom() {
         return nom;
     }

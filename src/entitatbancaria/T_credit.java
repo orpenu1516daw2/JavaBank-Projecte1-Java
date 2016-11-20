@@ -58,5 +58,36 @@ public class T_credit extends Compte {
     public void setPin(int pin) {
         this.pin = pin;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + (int) (this.n_tarjeta ^ (this.n_tarjeta >>> 32));
+        hash = 53 * hash + this.pin;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final T_credit other = (T_credit) obj;
+        if (this.n_tarjeta != other.n_tarjeta) {
+            return false;
+        }
+        if (this.pin != other.pin) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "T_credit{" + "n_tarjeta=" + n_tarjeta + ", pin=" + pin + '}';
+    }
   
 }

@@ -6,6 +6,7 @@
 package entitatbancaria;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  *
@@ -75,5 +76,38 @@ public class Empresa extends Client implements Prestec {
     public double getPrestec() {
         return 160000;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 29 * hash + Objects.hashCode(this.CIF);
+        hash = 29 * hash + Objects.hashCode(this.nom_empresa);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Empresa other = (Empresa) obj;
+        if (!Objects.equals(this.CIF, other.CIF)) {
+            return false;
+        }
+        if (!Objects.equals(this.nom_empresa, other.nom_empresa)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" + "CIF=" + CIF + ", nom_empresa=" + nom_empresa + '}';
+    }
+
+
 
 }

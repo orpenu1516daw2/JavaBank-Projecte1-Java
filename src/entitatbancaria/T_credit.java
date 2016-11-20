@@ -14,12 +14,12 @@ public class T_credit extends Compte {
     private int pin;
 
     /**
-     * Constructor de Tarjetes de crèdit
-     * @param n_tarjeta paràmetre que contè el número de tarjeta 
+     * Constructor de Targetes de crèdit
+     * @param n_tarjeta paràmetre que contè el número de targeta 
      * @param pin paràmetre que contè el pin de seguretat que ha escollit l'usuari
-     * @param n_compte paràmetre que contè el número de compte associat a la tarjeta de crèdit
-     * @param dni_cif paràmetre que contè el DNI o CIF del client associat a la tarjeta de crèdit
-     * @param diners paràmetre que contè els diners de la tarjeta
+     * @param n_compte paràmetre que contè el número de compte associat a la targeta de crèdit
+     * @param dni_cif paràmetre que contè el DNI o CIF del client associat a la targeta de crèdit
+     * @param diners paràmetre que contè els diners de la targeta
      */
     public T_credit(long n_tarjeta, int pin, String n_compte, String dni_cif, double diners) {
         super(n_compte, dni_cif, diners);
@@ -29,7 +29,7 @@ public class T_credit extends Compte {
         
     /**
      * Per obtenir el número de tarjeta
-     * @return retorna el número de tarjeta
+     * @return retorna el número de targeta
      */
     public long getN_tarjeta() {
         return n_tarjeta;
@@ -37,7 +37,7 @@ public class T_credit extends Compte {
 
     /**
      * Per setejar el número de tarjeta
-     * @param n_tarjeta paràmetre que contè el número de tarjeta
+     * @param n_tarjeta paràmetre que contè el número de targeta
      */
     public void setN_tarjeta(long n_tarjeta) {
         this.n_tarjeta = n_tarjeta;

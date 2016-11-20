@@ -15,13 +15,13 @@ public class T_debit extends Compte {
     private double saldo;
 
     /**
-     * Constructor de Tarjetes de dèbit
-     * @param n_tarjeta paràmetre que contè el número de tarjeta
+     * Constructor de Targetes de dèbit
+     * @param n_tarjeta paràmetre que contè el número de targeta
      * @param pin paràmetre que contè el pin de seguretat generat per l'usuari
-     * @param saldo paràmetre que contè el saldo de la tarjeta
-     * @param n_compte paràmetre que contè el número de compte associat a la tarjeta de crèdit
-     * @param dni_cif paràmetre que contè el DNI o CIF del client associat a la tarjeta de crèdit
-     * @param diners paràmetre que contè els diners de la tarjeta
+     * @param saldo paràmetre que contè el saldo de la targeta
+     * @param n_compte paràmetre que contè el número de compte associat a la targeta de crèdit
+     * @param dni_cif paràmetre que contè el DNI o CIF del client associat a la targeta de crèdit
+     * @param diners paràmetre que contè els diners de la targeta
      */
     public T_debit(long n_tarjeta, int pin, double saldo, String n_compte, String dni_cif, double diners) {
         super(n_compte, dni_cif, diners);
@@ -32,15 +32,15 @@ public class T_debit extends Compte {
  
    /**
      * Per obtenir el número de tarjeta
-     * @return retorna el número de tarjeta
+     * @return retorna el número de targeta
      */
     public long getN_tarjeta() {
         return n_tarjeta;
     }
 
     /**
-     * Per setejar el número de tarjeta
-     * @param n_tarjeta paràmetre que contè el número de tarjeta
+     * Per setejar el número de targeta
+     * @param n_tarjeta paràmetre que contè el número de targeta
      */
     public void setN_tarjeta(long n_tarjeta) {
         this.n_tarjeta = n_tarjeta;
@@ -63,7 +63,7 @@ public class T_debit extends Compte {
     }
 
     /**
-     * Per obtenir el saldo de la tarjeta
+     * Per obtenir el saldo de la targeta
      * @return retorna el saldo de la tarjeta
      */
     public double getSaldo() {
@@ -71,8 +71,8 @@ public class T_debit extends Compte {
     }
 
     /**
-     * Per setejar el saldo de la tarjeta
-     * @param saldo paràmetre que contè el saldo de la tarjeta
+     * Per setejar el saldo de la targeta
+     * @param saldo paràmetre que contè el saldo de la targeta
      */
     public void setSaldo(double saldo) {
         this.saldo = saldo;

@@ -34,7 +34,5 @@ public class T_credit extends Compte {
     public void setPin(int pin) {
         this.pin = pin;
     }
-    
-    
-    
+  
 }

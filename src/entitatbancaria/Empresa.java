@@ -30,10 +30,6 @@ public class Empresa extends Client implements Prestec {
         this.CIF = CIF;
     }
 
-    /*public String getNom_empresa() {
-        return nom_empresa;
-    }*/
-
     public void setNom_empresa(String nom_empresa) {
         this.nom_empresa = nom_empresa;
     }
@@ -60,6 +56,5 @@ public class Empresa extends Client implements Prestec {
     public double getPrestec() {
         return 160000;
     }
-
 
 }

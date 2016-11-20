@@ -6,8 +6,6 @@
 package entitatbancaria;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,6 +15,10 @@ import java.util.Scanner;
  */
 public class EntitatBancaria {
 
+    /**
+     * On s'inicia tot el programa, aquí setejem el valor inicial d'algunes variables importants
+     * @param args
+     */
     public static void main(String[] args) {
         boolean inici = true;
         ArrayList <Compte> compte = new ArrayList<>();
@@ -25,6 +27,15 @@ public class EntitatBancaria {
         
         creaAccount(compte,cli,inici,IDc,IDu);
     }
+
+    /**
+     * Crea un nou compte
+     * @param compte paràmtre de tipus ArrayList que emmagatzema tots els comptes
+     * @param client paràmtre de tipus ArrayList que emmagatzema tots els clients
+     * @param inici paràmetre per indicar que és l'inici del programa (serveix per indicar si és el primer cop que posem en marxa el programa)
+     * @param IDc índex de l'ArrayList de comptes
+     * @param IDu índex de l'ArrayList d'usuaris
+     */
     public static void creaAccount(ArrayList<Compte> compte, ArrayList<Client> client, boolean inici, int IDc, int IDu){
         Scanner line = new Scanner(System.in);
         Scanner lone = new Scanner(System.in);
@@ -92,26 +103,33 @@ public class EntitatBancaria {
         
     }
     
+    /**
+     * Serveix per crear tant usuaris com comptes de clients particulars
+     * @param nom paràmetre que indica el nom del cient
+     * @param cognom paràmetre que indica el cognom del client
+     * @param DNI paràmetre que indica el DNI del client
+     * @param domicili paràmetre que indica el domicili del client
+     * @param n_comptes paràmetre que indica el número de comptes del client
+     * @param compte paràmtre de tipus ArrayList que emmagatzema tots els comptes
+     * @param particular paràmtre de tipus ArrayList que emmagatzema tots els clients particulars
+     * @param IDc índex de l'ArrayList de comptes
+     * @param IDu índex de l'ArrayList de clients
+     */
     public static void creaCompteParticular(String nom, String cognom, String DNI, String domicili, int n_comptes, ArrayList<Compte> compte, ArrayList<Client> particular, int IDc, int IDu){
         Scanner line = new Scanner(System.in);
         Scanner lone = new Scanner(System.in);
-        //int c;
         int i = 0;
-        //int IDc = 0,IDu = 0;
         n_comptes = n_comptes +1;
         int posArray = n_comptes -1;
         String n_compte = "JB" + DNI + n_comptes;
 
         compte.add(new Compte(n_compte, DNI, 20));
         if(posArray < 1){
-            //c = 0;
             System.out.println("Creant nou client...");
             particular.add(new Particular(nom, cognom, DNI, domicili, compte));
             System.out.println("\n");
         }
-        /*for(i = 0; i < particular.size(); i++){
-            
-        }*/
+
         particular.get(IDu).setN_comptes(n_comptes);
 
         System.out.println("\nCompte creat correctament\n\tNom: " + nom + "\n\tCognom: " + cognom + "\n\tDNI: " + DNI + "\n\tDomicili: " + domicili + 
@@ -128,12 +146,21 @@ public class EntitatBancaria {
         }  
     }
     
+    /**
+     * Serveix per crear tant usuaris com comptes de clients empresa
+     * @param nom_empresa paràmetre que indica el nom de la empresa del cient
+     * @param CIF paràmetre que indica el CIF del cient
+     * @param domicili paràmetre que indica el domicili del cient
+     * @param n_comptes paràmetre que indica el número de comptes del cient
+     * @param compte paràmtre de tipus ArrayList que emmagatzema tots els comptes
+     * @param empresa paràmtre de tipus ArrayList que emmagatzema tots els clients empresa
+     * @param IDc índex de l'ArrayList de comptes
+     * @param IDu índex de l'ArrayList de clients
+     */
     public static void creaCompteEmpresa(String nom_empresa, String CIF, String domicili, int n_comptes, ArrayList<Compte> compte, ArrayList<Client> empresa, int IDc, int IDu){
         Scanner line = new Scanner(System.in);
-        Scanner lone = new Scanner(System.in);
         int c = 0;
         int i = 0;
-        //int IDc = 0,IDu = 0;
         n_comptes = n_comptes +1;
         int posArray = n_comptes -1;
         String n_compte = "JB" + CIF + n_comptes;
@@ -160,6 +187,13 @@ public class EntitatBancaria {
         }
     }
 
+    /**
+     * Serveix per ingressar o retirar diners del compte actual
+     * @param compte paràmtre de tipus ArrayList que emmagatzema tots els comptes
+     * @param client paràmtre de tipus ArrayList que emmagatzema tots els clients
+     * @param msg paràmetre que contè el missatge per escollir si ingressar o retirar diners (serveix per printar-lo i per el switch)
+     * @param IDc índex de l'ArrayList de comptes
+     */
     public static void ingresRetirada(ArrayList <Compte> compte, ArrayList <Client> client, String msg, /*String user, String codi,*/ int IDc){
         Scanner line = new Scanner(System.in);
 
@@ -177,6 +211,14 @@ public class EntitatBancaria {
         System.out.println("Diners al compte: " + compte.get(IDc).getDiners());
     }
     
+    /**
+     * Serveix per transferir diners entre comptes, tant de l'usuari com d'altres clients
+     * @param compte paràmtre de tipus ArrayList que emmagatzema tots els comptes
+     * @param client paràmtre de tipus ArrayList que emmagatzema tots els clients
+     * @param user paràmetre que indica l'usuari actual
+     * @param codi paràmetre que indica el codi de l'usuari actual (DNI o CIF)
+     * @param IDc índex de l'ArrayList de comptes
+     */
     public static void transferencia(ArrayList <Compte> compte, ArrayList <Client> client, String user, String codi, int IDc){
         Scanner line = new Scanner(System.in);
         boolean verifi = false;
@@ -209,11 +251,19 @@ public class EntitatBancaria {
         System.out.println("Diners al compte: " + compte.get(IDc).getDiners());        
     }
     
+    /**
+     * Serveix per loguejar-se com un usuari ja registrat al sistema
+     * @param u paràmetre que indica l'usuari actual
+     * @param d paràmetre que indica el codi (DNI o CIF) de l'usuari actual
+     * @param co paràmetre de tipus ArrayList que contè tots els comptes
+     * @param cl paràmetre de tipus ArrayList que contè tots els clients
+     * @param IDc índex de l'ArrayList de comptes
+     * @param IDu índex de l'ArrayList de clients
+     */
     public static void login(String u, String d, ArrayList <Compte> co, ArrayList <Client> cl, int IDc, int IDu){
         Scanner lone = new Scanner(System.in);
         Scanner line = new Scanner(System.in);
         int c = 0;
-        //int IDu = 0, IDc = 0;
         String user = null;
         String codi = null;
         boolean access = false;
@@ -253,7 +303,6 @@ public class EntitatBancaria {
             codi = line.nextLine();
             
             for( int i = 0 ; i  < client.size(); i++){
-                //System.out.println("Nom: " + client.get(i).getNom() + " DNI: " + client.get(i).getDNI() + "Tamany client: " + client.size());
                 if(user.equalsIgnoreCase(client.get(i).getNom()) && codi.equalsIgnoreCase(client.get(i).getDNI())){
                     IDu = i;
                     user = client.get(IDu).getNom();
@@ -261,9 +310,6 @@ public class EntitatBancaria {
                 }
             }
             
-            /*if(user.equals(client.get(0).getNom()) && codi.equals(client.get(0).getDNI())){
-                access = true;
-            }*/
         }else if(c == 2){
             System.out.println("\nNom empresa: ");
             user = line.nextLine();
@@ -277,8 +323,7 @@ public class EntitatBancaria {
                     user = client.get(IDu).getNom();
                     access = true;
                 }
-            }
-            
+            }    
         }
 
         if(access != true){
@@ -295,6 +340,14 @@ public class EntitatBancaria {
         }
     }
     
+    /**
+     * Serveix per canviar entre els comptes que té l'usuari actual
+     * @param compte paràmtre de tipus ArrayList que emmagatzema tots els comptes
+     * @param client paràmtre de tipus ArrayList que emmagatzema tots els clients
+     * @param user paràmetre que indica l'usuari actual
+     * @param codi paràmetre que indica el codi de l'usuari actual (DNI o CIF)
+     * @param IDu índex de l'ArrayList de clients
+     */
     public static void swCount(ArrayList<Compte> compte, ArrayList<Client> client, String user, String codi, int IDu){
         Scanner line = new Scanner(System.in);
         int i;
@@ -322,6 +375,11 @@ public class EntitatBancaria {
         swCount(compte,client,user,codi,IDu);
     }
     
+    /**
+     * Serveix per crear un pin de segurtat per la tarjeta
+     * @param pin paràmetre que contè el pin creat per l'usuari
+     * @return retorna el pin creat per l'usuari
+     */
     public static int pin(int pin){
         Scanner line = new Scanner(System.in);
         int lenght;
@@ -338,6 +396,11 @@ public class EntitatBancaria {
         return pin;
     }
     
+    /**
+     * Serveix per generar un número de tarjeta al atzar
+     * @param n_tarjeta paràmetre que contè el número de tarjeta
+     * @return retorna el número de tarjeta generat
+     */
     public static long n_tarjeta(long n_tarjeta){
         Random  rnd = new Random();
         n_tarjeta = rnd.nextInt(900000-100000+1)+10; 
@@ -345,6 +408,15 @@ public class EntitatBancaria {
         return n_tarjeta;
     }
     
+    /**
+     * Serveix per mostrar tot el menú d'opcions disponibles per a l'usuari actual un cop s'ha loguejat
+     * @param User paràmetre que contè el nom o nom de la empresa de l'usuari actual
+     * @param Codi paràmetre que contè el DNI o CIF de l'usuari actual
+     * @param co paràmetre de tipus ArrayList que contè tots els comptes
+     * @param cl paràmetre de tipus ArrayList que contè tots els clients
+     * @param IDc índex de l'ArrayList de comptes
+     * @param IDu índex de l'ArrayList de clients
+     */
     public static void logged(String User, String Codi, ArrayList <Compte> co, ArrayList <Client> cl, int IDc, int IDu){
         String user = User;
         String codi = Codi;
@@ -373,11 +445,11 @@ public class EntitatBancaria {
                     break;
                 case 1:
                     msg = "ingressar";
-                    ingresRetirada(compte,client,msg,/*user,codi,*/IDc);
+                    ingresRetirada(compte,client,msg,IDc);
                     break;
                 case 2:
                     msg = "retirar";
-                    ingresRetirada(compte,client,msg,/*user,codi,*/IDc);
+                    ingresRetirada(compte,client,msg,IDc);
                     break;
                 case 3:
                     transferencia(compte,client,user,codi,IDc);

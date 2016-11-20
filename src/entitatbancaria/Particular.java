@@ -57,11 +57,6 @@ public class Particular extends Client implements Prestec {
         this.domicili = Domicili;
     }
 
-    /*@Override
-    String getNom_empresa() {
-        return "";
-    }*/
-
     @Override
     String getCIF() {
         return "";
@@ -71,6 +66,5 @@ public class Particular extends Client implements Prestec {
     public double getPrestec() {
         return 60000;
     }
- 
-    
+  
 }

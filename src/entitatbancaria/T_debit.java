@@ -44,7 +44,5 @@ public class T_debit extends Compte {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-    
-    
-    
+ 
 }

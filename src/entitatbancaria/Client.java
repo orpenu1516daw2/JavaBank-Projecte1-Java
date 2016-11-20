@@ -51,9 +51,7 @@ public abstract class Client {
     abstract String getCognom();
     abstract String getDNI();
     
-    //abstract String getNom_empresa();
     abstract String getCIF();
-    
 
     abstract double getPrestec();
 }
